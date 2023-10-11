@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 460b4853db08d3a4897c99d7ef71d092, type: 3}
-  m_Name: CapsuleDatas
+  m_Name: DaggerData
   m_EditorClassIdentifier: 
   ItemID: 1
-  ItemPrice: 30
-  ItemName: Cube
+  ItemPrice: 10
+  ItemName: Dagger
   IsDestroyable: 1
-  Rarity: 2
-  ItemPosition: {x: 2, y: 1, z: 0}
+  Rarity: 0
+  ItemPosition: {x: -2, y: 0.5, z: 0}
+  ItemSprite: {fileID: 21300000, guid: 063161d6cf8f4b246bd36daed6be0c84, type: 3}

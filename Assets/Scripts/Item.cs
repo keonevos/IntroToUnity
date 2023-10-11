@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+[SelectionBase]
 public class Item : MonoBehaviour, IPointerClickHandler
 {
     public ItemData ItemData;
@@ -19,8 +21,11 @@ public class Item : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        // place l'objet avec ses datas
+        // place l'objet en utilisant la data de l'objet
         transform.position = ItemData.ItemPosition;
+        
+        //Mesh myMesh = Instantiate(ItemData.ItemMeshFilter);
+        //GetComponent<MeshFilter>().sharedMesh = myMesh;
     }
 
     // Update is called once per frame
