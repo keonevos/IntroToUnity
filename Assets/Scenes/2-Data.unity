@@ -793,6 +793,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: ba41c6ddac5380a40bb8ea051cd54efe, type: 2}
+  ParticleSystem: {fileID: 1683920625479615263, guid: 13213fe32affcc44badf5f818d50e17a,
+    type: 3}
   RotationSpeed: 20
 --- !u!135 &1261779142
 SphereCollider:
@@ -883,6 +885,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: 87d3208c3157c7344853593accdf5d7a, type: 2}
+  ParticleSystem: {fileID: 1683920625479615263, guid: 13213fe32affcc44badf5f818d50e17a,
+    type: 3}
   RotationSpeed: 20
 --- !u!4 &1917844541 stripped
 Transform:
@@ -960,6 +964,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: e9d739ba79ff8014b8dc5af4f6a3e4ef, type: 2}
+  ParticleSystem: {fileID: 1683920625479615263, guid: 13213fe32affcc44badf5f818d50e17a,
+    type: 3}
   RotationSpeed: 20
 --- !u!1001 &2131136649
 PrefabInstance:

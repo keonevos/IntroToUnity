@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Item : MonoBehaviour, IPointerClickHandler
 {
     public ItemData ItemData;
+    public ParticleSystem ParticleSystem;
     public float RotationSpeed = 20.0f;
 
     public void OnPointerClick(PointerEventData eventData)
@@ -15,6 +16,7 @@ public class Item : MonoBehaviour, IPointerClickHandler
         if (ItemData.IsDestroyable)
         {
             Destroy(gameObject);
+            Instantiate(ParticleSystem, transform.position, Quaternion.identity);
         }
     }
 
