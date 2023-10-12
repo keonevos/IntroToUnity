@@ -1,6 +1,6 @@
 # IntroToUnity
 
-Section Game - Game design 1
+Section Game - Game Design 1
 
 [Naming and Code Style Tips for C# Scripting in Unity](https://unity.com/how-to/naming-and-code-style-tips-c-scripting-unity)
 
