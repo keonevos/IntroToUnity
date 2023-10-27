@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public float SpeedInMeterPerSecond = 6.0f;
     public float RotationSpeedInDegreePerSecond = 15.0f;
 
+    public GameObject _playerVisual;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,14 +36,17 @@ public class Player : MonoBehaviour
         //transform.Translate(lDirection * SpeedInMeterPerSecond * Time.deltaTime);
 
 
-        // # Rotation du Player        
-        // On connait la direction du coup on peut entrer la valeur directement dans le forward vector qui est disponible sur tous les GameObjects
+        // # Rotation du Player                
+        if (lDirection.magnitude > 0)
+        {
+            // On connait la direction du coup on peut entrer la valeur directement dans le forward vector qui est disponible sur tous les GameObjects
+            // transform.forward = lDirection;
 
-        // transform.forward = lDirection;
+            // version smooth en utilisant (mal) une interpolation sphérique (Slerp => https://docs.unity3d.com/ScriptReference/Vector3.Slerp.html)
+            _playerVisual.transform.forward = Vector3.Slerp(_playerVisual.transform.forward, lDirection, RotationSpeedInDegreePerSecond * Time.deltaTime);
 
-        // version smooth en utilisant une interpolation sphérique (Slerp => https://docs.unity3d.com/ScriptReference/Vector3.Slerp.html)
-        transform.forward = Vector3.Slerp(transform.forward, lDirection, RotationSpeedInDegreePerSecond * Time.deltaTime);
-
-
+            // version smooth alternative en utilisant (mal) une interpolation sphérique et des quaternions
+            //_playerVisual.transform.rotation = Quaternion.Slerp(_playerVisual.transform.rotation, Quaternion.LookRotation(lDirection), RotationSpeedInDegreePerSecond * Time.deltaTime);
+        }
     }
 }

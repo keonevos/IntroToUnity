@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 437596603}
   - component: {fileID: 437596602}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Lunettes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,12 +248,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437596600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.421, z: 0.471}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.421, z: 0.471}
   m_LocalScale: {x: 0.52, y: 0.32, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 887409522}
+  m_Father: {fileID: 1699973821}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &437596602
@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedInMeterPerSecond: 6
   RotationSpeedInDegreePerSecond: 15
+  _playerVisual: {fileID: 1699973820}
 --- !u!4 &887409522
 Transform:
   m_ObjectHideFlags: 0
@@ -377,7 +378,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1699973821}
-  - {fileID: 437596601}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 1699973822}
   - component: {fileID: 1699973825}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,7 +772,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 437596601}
   m_Father: {fileID: 887409522}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
