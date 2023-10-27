@@ -10,4 +10,9 @@ public enum EWeaponType{ }
 public struct FWeapon{ }
 ```
 
+## Kenney Assets
+- [FoodKit](https://kenney.nl/assets/food-kit)
+- [OnScreenControls](https://kenney.nl/assets/onscreen-controls)
+- [PrototypeTextures](https://kenney.nl/assets/prototype-textures)
+
 Educational project for Lisaa 2023/2024
