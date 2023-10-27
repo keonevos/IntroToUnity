@@ -154,12 +154,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 907ddf0d1c0e4d742bf48d6fdeac11eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907ddf0d1c0e4d742bf48d6fdeac11eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 907ddf0d1c0e4d742bf48d6fdeac11eb,
         type: 3}
@@ -216,6 +216,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907ddf0d1c0e4d742bf48d6fdeac11eb, type: 3}
+--- !u!1 &432957900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 907ddf0d1c0e4d742bf48d6fdeac11eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 271075000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &437596600
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedInMeterPerSecond: 6
+  RotationSpeedInDegreePerSecond: 15
 --- !u!4 &887409522
 Transform:
   m_ObjectHideFlags: 0
@@ -939,5 +946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: 19ad1be9cbca0de44a607e003c1d5cee, type: 2}
-  ParticleSystem: {fileID: 0}
+  ParticleSystem: {fileID: 1683920625479615263, guid: 13213fe32affcc44badf5f818d50e17a,
+    type: 3}
   RotationSpeed: 20
+  ItemPrefb: {fileID: 432957900}
