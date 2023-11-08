@@ -25,15 +25,30 @@ public class Player : MonoBehaviour
         // # ici on normalize le vecteur pour avoir une vitesse constante dans toutes les directions
         Vector3 lDirection = lInputVector.normalized;
 
-        // # Déplacement du Player
-        // on récupère la position actuelle du Player et on lui ajoute la direction multipliée par la vitesse et le temps écoulé depuis la dernière frame
-        transform.position = transform.position + (lDirection * SpeedInMeterPerSecond * Time.deltaTime);
+        // # Détection de collision
+        // 1ere version de la detection de collision
+        float lDetectionDistance = .8f;
+        Vector3 lDectionOrigin = transform.position;
+        lDectionOrigin.y += .5f;
+        bool lHitSomething = Physics.Raycast(lDectionOrigin, lDirection, out RaycastHit raycastHit, lDetectionDistance );
 
-        // même chose avec la notation +=
-        //transform.position += lDirection * SpeedInMeterPerSecond * Time.deltaTime;
+        // on peut bouger si on a rien touché ou si on a touché un trigger
+        bool lCanMove = (lHitSomething == false) || (raycastHit.collider.isTrigger == true);
 
-        // encore une alternative avec la fonction 'Translate' qui est disponible sur tous les GameObjects
-        //transform.Translate(lDirection * SpeedInMeterPerSecond * Time.deltaTime);
+        if (lCanMove == true)
+        {
+            float lMoveDistance = SpeedInMeterPerSecond * Time.deltaTime;
+            transform.position = transform.position + (lDirection * lMoveDistance);
+
+            // # Déplacement du Player
+            // on récupère la position actuelle du Player et on lui ajoute la direction multipliée par la moveDistance
+
+            // même chose avec la notation +=
+            //transform.position += lDirection * SpeedInMeterPerSecond * Time.deltaTime;
+
+            // encore une alternative avec la fonction 'Translate' qui est disponible sur tous les GameObjects
+            //transform.Translate(lDirection * SpeedInMeterPerSecond * Time.deltaTime);
+        }
 
 
         // # Rotation du Player                

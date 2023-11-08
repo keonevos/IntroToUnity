@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,7 @@ public class Pickup : MonoBehaviour
     public ParticleSystem ParticleSystem;
     public float RotationSpeed = 20.0f;
     public GameObject ItemPrefb;
+    public CinemachineVirtualCamera VirtualCamera;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +20,8 @@ public class Pickup : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(ParticleSystem, transform.position, Quaternion.identity);
+
+            VirtualCamera.enabled = false;
         }
     }
 
