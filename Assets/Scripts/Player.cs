@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float SpeedInMeterPerSecond = 6.0f;
     public float RotationSpeedInDegreePerSecond = 15.0f;
-
+    public float lRaycastDistance = 0.5f;
     public GameObject _playerVisual;
 
     // Start is called before the first frame update
@@ -24,13 +24,26 @@ public class Player : MonoBehaviour
 
         // # ici on normalize le vecteur pour avoir une vitesse constante dans toutes les directions
         Vector3 lDirection = lInputVector.normalized;
+        float lMovement = (SpeedInMeterPerSecond * Time.deltaTime);
 
+<<<<<<< Updated upstream
         // # Détection de collision
         // 1ere version de la detection de collision
         float lDetectionDistance = .8f;
         Vector3 lDectionOrigin = transform.position;
         lDectionOrigin.y += .5f;
         bool lHitSomething = Physics.Raycast(lDectionOrigin, lDirection, out RaycastHit raycastHit, lDetectionDistance );
+=======
+        // # Déplacement du Player
+        // on récupère la position actuelle du Player et on lui ajoute la direction multipliée par la vitesse et le temps écoulé depuis la dernière frame
+        
+        bool lItSomething = Physics.Raycast(transform.position, lDirection, out RaycastHit lRaycastHit, lRaycastDistance); // rayon qui revnoie vrai si on touche quelque chose
+
+        if (lItSomething == false) // permet de deplacer si on ne touche rien
+        {
+        transform.position = transform.position + (lDirection * lMovement);
+        }
+>>>>>>> Stashed changes
 
         // on peut bouger si on a rien touché ou si on a touché un trigger
         bool lCanMove = (lHitSomething == false) || (raycastHit.collider.isTrigger == true);

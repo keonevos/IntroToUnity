@@ -1,5 +1,6 @@
 using Cinemachine;
 using UnityEngine;
+using Cinemachine;
 using UnityEngine.EventSystems;
 
 
@@ -10,18 +11,29 @@ public class Pickup : MonoBehaviour
     public ParticleSystem ParticleSystem;
     public float RotationSpeed = 20.0f;
     public GameObject ItemPrefb;
+<<<<<<< Updated upstream
     public CinemachineVirtualCamera VirtualCamera;
+=======
+    public CinemachineVirtualCamera RefCameraFix;
+    public int m_Priority = 10;
+>>>>>>> Stashed changes
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(name + " Game ObjectClicked!" + "ID" + ItemData.ItemID + " price" + ItemData.ItemPrice);
+        RefCameraFix.enabled = false;
 
         if (ItemData.IsDestroyable)
         {
             Destroy(gameObject);
             Instantiate(ParticleSystem, transform.position, Quaternion.identity);
+<<<<<<< Updated upstream
 
             VirtualCamera.enabled = false;
+=======
+            RefCameraFix.enabled = true;
+            RefCameraFix.m_Priority = 30;
+>>>>>>> Stashed changes
         }
     }
 
